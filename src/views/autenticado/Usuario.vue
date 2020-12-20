@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TableUsuario from '../components/TableUsuario.vue'
+import TableUsuario from '../../components/autenticado/TableUsuario.vue';
 export default {
   components: { TableUsuario },
 

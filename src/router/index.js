@@ -1,41 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Autenticado from '../views/Autenticado.vue'
+import Inicio from '../views/Inicio.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/categoria',
-    name: 'Categoria',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Categoria.vue')
-  },
-  {
-    path: '/articulo',
-    name: 'Articulo',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Articulo.vue')
-  },
-  {
-    path: '/usuario',
-    name: 'Usuario',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Usuario.vue')
-  },
-]
+    path: '/autenticado',
+    name: 'Autenticado',
+    component: Autenticado,
 
+    children: [
+      {
+        path: '/autenticado/categoria',
+        name: 'Categoria',
+        component: () => import(/* webpackChunkName: "about" */ '../views/autenticado/Categoria.vue')
+      },
+      {
+        path: '/autenticado/articulo',
+        name: 'Articulo',
+        component: () => import(/* webpackChunkName: "about" */ '../views/autenticado/Articulo.vue')
+      },
+      {
+        path: '/autenticado/usuario',
+        name: 'Usuario',
+        component: () => import(/* webpackChunkName: "about" */ '../views/autenticado/Usuario.vue')
+      },
+    ]
+  },
+  {
+    path: '/',
+    name: 'Inicio',
+    component: Inicio,
+  }
+]
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
