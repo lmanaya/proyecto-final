@@ -11,7 +11,7 @@
         <v-app id="inspire">
           <v-card class="mx-auto" width="300">
             <v-list>
-              <v-list-item :to="{ name: 'Autenticado' }">
+              <v-list-item :to="{ name: 'TheAuth' }">
                 <v-list-item-icon>
                   <v-icon>mdi-home</v-icon>
                 </v-list-item-icon>
@@ -72,7 +72,7 @@
       </div>
     </v-navigation-drawer>
 
-    <v-main class="grey lighten-2">
+    <v-main class="grey lighten-2">     
       <router-view />
     </v-main>
   </v-app>

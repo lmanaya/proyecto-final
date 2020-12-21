@@ -3,7 +3,9 @@
 </template>
 
 <script>
+import TheLandingPage from '../components/TheLandingPage.vue';
 export default {
+  components: { TheLandingPage },
   name: "Inicio",
 };
 </script>
