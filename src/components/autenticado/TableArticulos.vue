@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <v-data-table
+<v-container>
+  <v-data-table
         :headers="headers"
         :items="articulos"
         sort-by="id"
@@ -116,6 +117,7 @@
           <v-btn color="primary" @click="initialize"> Reset </v-btn>
         </template>
       </v-data-table>
+</v-container>
     </v-app>
   </div>
 </template>

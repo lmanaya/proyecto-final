@@ -1,9 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app>
+    <v-app-bar app >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" fixed temporary>
@@ -72,7 +71,7 @@
       </div>
     </v-navigation-drawer>
 
-    <v-main class="grey lighten-2">     
+    <v-main class="grey lighten-2">
       <router-view />
     </v-main>
   </v-app>

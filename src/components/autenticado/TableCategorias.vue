@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <v-data-table
+      <v-container>
+        <v-data-table
         :headers="headers"
         :items="categorias"
         sort-by="id"
@@ -10,7 +11,7 @@
         loading-text="Loading... Please wait"
       >
         <template v-slot:top>
-          <v-toolbar flat>
+          <v-toolbar flat space-between>
             <v-toolbar-title>CATEGORÍAS</v-toolbar-title>
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-spacer></v-spacer>
@@ -92,6 +93,7 @@
           <v-btn color="primary" @click="initialize"> Reset </v-btn>
         </template>
       </v-data-table>
+      </v-container>
     </v-app>
   </div>
 </template>

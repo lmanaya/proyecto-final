@@ -1,14 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="white" flat>
-      <v-avatar
-        :color="
-          $vuetify.breakpoint.smAndDown
-            ? 'grey darken-1'
-            : 'grey darken-1 shrinkt'
-        "
-        size="32"
-      ></v-avatar>
 
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab
