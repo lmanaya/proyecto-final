@@ -210,7 +210,11 @@ export default {
         axios
           .put("http://localhost:3000/api/usuario/deactivate", {
             id: this.editedItem.id,
-          })
+          }, 
+          {
+          headers: {
+            token: this.$store.state.token
+          }})
           .then((response) => {
             this.list();
           })
@@ -222,7 +226,11 @@ export default {
         axios
           .put("http://localhost:3000/api/usuario/activate", {
             id: this.editedItem.id,
-          })
+          },
+          {
+          headers: {
+            token: this.$store.state.token
+          }})
           .then((response) => {
             this.list();
           })
@@ -259,7 +267,11 @@ export default {
             email: this.editedItem.email,
             password: this.editedItem.password,
             rol: this.editedItem.rol,
-          })
+          },
+          {
+          headers: {
+            token: this.$store.state.token
+          }})
           .then((response) => {
             this.list();
           })
@@ -275,7 +287,11 @@ export default {
             password: this.editedItem.password,
             rol: this.editedItem.rol,
             estado: this.editItem.estado,
-          })
+          },
+          {
+          headers: {
+            token: this.$store.state.token
+          }})
           .then((response) => {
             this.list();
           })
