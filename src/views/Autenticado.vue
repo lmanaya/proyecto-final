@@ -1,9 +1,9 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app>
+    <v-app-bar app color="white">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-container d-flex justify-end>
-        <v-btn color="success" class="mr-4" @click="logOut" height="40">
+        <v-btn color="secondary" class="mr-4" @click="logOut" height="40">
           Salir
         </v-btn>
       </v-container>
@@ -79,7 +79,7 @@
       </div>
     </v-navigation-drawer>
 
-    <v-main class="grey lighten-2">
+    <v-main class="white">
       <router-view />
     </v-main>
   </v-app>
