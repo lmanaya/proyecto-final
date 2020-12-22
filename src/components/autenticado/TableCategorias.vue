@@ -121,14 +121,14 @@ export default {
     editedIndex: -1,
     editedItem: {
       id: 0,
-      nombre: " ",
-      descripcion: " ",
+      nombre: "",
+      descripcion: "",
       estado: 0,
     },
     defaultItem: {
       id: 0,
-      nombre: " ",
-      descripción: " ",
+      nombre: "",
+      descripción: "",
       estado: 0,
     },
   }),

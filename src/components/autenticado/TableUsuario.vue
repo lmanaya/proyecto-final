@@ -135,23 +135,22 @@ export default {
     //   { text: "Contraseña", value: "password" },
       { text: "Actions", value: "actions", sortable: false },
     ],
-    desserts: [],
     usuarios: [],
     editedIndex: -1,
     editedItem: {
       id: 0,
-      nombre: " ",
-      rol: " ",
-      email: " ",
-      password: " ",
+      nombre: "",
+      rol: "",
+      email: "",
+      password: "",
       estado: 0,
     },
     defaultItem: {
       id: 0,
-      nombre: " ",
-      rol: " ",
-      email: " ",
-      password: " ",
+      nombre: "",
+      rol: "",
+      email: "",
+      password: "",
       estado: 0,
     },
   }),
@@ -178,7 +177,11 @@ export default {
   methods: {
     list() {
       axios
-        .get("http://localhost:3000/api/usuario/list")
+        .get("http://localhost:3000/api/usuario/list",{
+          headers: {
+            token: this.$store.state.token
+          }
+        })
         .then((response) => {
           this.usuarios = response.data;
           this.cargando =false;

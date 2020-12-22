@@ -1,7 +1,6 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="white" flat>
-
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab
           v-for="([title, ruta], i) in links"
@@ -25,14 +24,14 @@
         <v-col cols="12" md="6">
           <v-form ref="form">
             <v-text-field
-              v-model="email"
+              v-model="login.email"
               :rules="emailRules"
               label="E-mail"
               required
             ></v-text-field>
 
             <v-text-field
-              v-model="password"
+              v-model="login.password"
               :rules="passwordRules"
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show1 ? 'text' : 'password'"
@@ -51,54 +50,46 @@
 
 <script>
 import swal from "sweetalert";
+import VueJwtDecode from "vue-jwt-decode";
 export default {
   data: () => ({
     links: [
       ["Inicio", "Inicio"],
       ["Login", "Login"],
     ],
-    email: "",
-    password: "",
+    login: {
+      email: "",
+      password: "",
+    },
     show1: false,
     emailRules: [
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
-    passwordRules: [
-      (v) => !!v || "Password is required",
-    ],
+    passwordRules: [(v) => !!v || "Password is required"],
   }),
+  beforeCreate() {
+    this.$store.dispatch("autoLogin")
+      ? this.$router.push({path: "/autenticado/home"})
+      : false;
+  },
   methods: {
     Login() {
       axios
-        .post("http://localhost:3000/api/usuario/login", {
-          email: this.email,
-          password: this.password,
-        })
+        .post("http://localhost:3000/api/usuario/login", this.login)
         .then((response) => {
-          console.log(response);
-          let token = response.data.tokenReturn;
-          let user = response.data.user;
-          let nombre = response.data.user.nombre;
-          let email = response.data.user.email;
-          let rol = response.data.user.rol;
-          let estado = response.data.user.estado;
-
-          localStorage.setItem("jwt", token);
-          localStorage.setItem("user", JSON.stringify(user));
-          localStorage.setItem("nombre", nombre);
-          localStorage.setItem("email", email);
-          localStorage.setItem("rol", rol);
-          localStorage.setItem("estado", estado);
-
-          if (token) {
-            swal("Welcome!", "Successful signin", "success");
-            this.$router.push("/autenticado/home");
-          }
+          return response.data;
+        })
+        .then((data) => {
+          this.$store.dispatch('saveToken',data.tokenReturn)
+          swal("Welcome!", "Successful signin", "success");
+          this.$router.push("/autenticado/home");
+          console.log(data);
         })
         .catch((error) => {
           swal("Oops!", "Something went wrong!", "error");
           console.log(error);
+          return error;
         });
     },
   },
