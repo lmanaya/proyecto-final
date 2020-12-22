@@ -20,9 +20,9 @@
           </v-container>
         </v-card>
 
-        <v-btn color="success" class="mr-4" @click="logOut" height="60">
+        <!-- <v-btn color="success" class="mr-4" @click="logOut" height="60">
           Salir
-        </v-btn>
+        </v-btn> -->
       </v-container>
     </v-app>
   </div>
@@ -56,9 +56,9 @@ export default {
       //   this.user = JSON.parse(user);
       // }
     },
-    logOut() {
-      this.$store.dispatch("salir");
-    },
+    // logOut() {
+    //   this.$store.dispatch("salir");
+    // },
   },
 };
 </script>

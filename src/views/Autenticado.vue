@@ -1,8 +1,12 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app >
+    <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
+      <v-container d-flex justify-end>
+        <v-btn color="success" class="mr-4" @click="logOut" height="40">
+          Salir
+        </v-btn>
+      </v-container>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" fixed temporary>
@@ -44,8 +48,11 @@
                   </v-list-item>
                 </v-list-group>
 
-                <v-list-group v-if="this.$store.state.user.rol === 'Administrador'"
-                no-action sub-group>
+                <v-list-group
+                  v-if="this.$store.state.user.rol === 'Administrador'"
+                  no-action
+                  sub-group
+                >
                   <template v-slot:activator>
                     <v-list-item-content>
                       <v-list-item-title>De Acceso</v-list-item-title>
@@ -89,5 +96,10 @@ export default {
     ],
     cruds: [["Usuarios", "mdi-account-check-outline", "Usuario"]],
   }),
+  methods: {
+    logOut() {
+      this.$store.dispatch("salir");
+    },
+  }
 };
 </script>
