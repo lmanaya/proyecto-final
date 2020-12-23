@@ -21,7 +21,7 @@
 
     <v-main class="parallax align-items-start" >
       <v-container d-flex justify-center class="pt-15">
-        <v-col cols="12" md="6" style="background:white" class="rounded-lg">
+        <v-col cols="12" md="6" style="background: rgba(233, 233, 233, 0.93); padding:30px" class="rounded-lg">
           <v-form ref="form">
             <v-text-field
               v-model="login.email"
