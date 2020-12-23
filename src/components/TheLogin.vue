@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app color="white" flat>
+    <v-app-bar app color="white">
       <v-tabs centered class="ml-n9" color="grey darken-1">
         <v-tab
           v-for="([title, ruta], i) in links"
@@ -18,10 +18,14 @@
         size="32"
       ></v-avatar>
     </v-app-bar>
-
-    <v-main class="parallax align-items-start" >
+    <v-main class="parallax align-items-start">
       <v-container d-flex justify-center class="pt-15">
-        <v-col cols="12" md="6" style="background: rgba(233, 233, 233, 0.93); padding:30px" class="rounded-lg">
+        <v-col
+          cols="12"
+          md="6"
+          style="background: rgba(233, 233, 233, 0.93); padding: 30px"
+          class="rounded-lg"
+        >
           <v-form ref="form">
             <v-text-field
               v-model="login.email"
@@ -70,7 +74,7 @@ export default {
   }),
   beforeCreate() {
     this.$store.dispatch("autoLogin")
-      ? this.$router.push({path: "/autenticado/home"})
+      ? this.$router.push({ path: "/autenticado/home" })
       : false;
   },
   methods: {
@@ -81,7 +85,7 @@ export default {
           return response.data;
         })
         .then((data) => {
-          this.$store.dispatch('saveToken',data.tokenReturn)
+          this.$store.dispatch("saveToken", data.tokenReturn);
           swal("Welcome!", "Successful signin", "success");
           this.$router.push("/autenticado/home");
           console.log(data);
@@ -96,17 +100,15 @@ export default {
 };
 </script>
 <style>
-
 .parallax {
-background-image: url("../assets/background.jpg");
-background-size:cover;
-/* Set a specific height */
-/* min-height: 400px; */
-/* Create the parallax scrolling effect */
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-/* background-size: cover; */
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  /* Set a specific height */
+  /* min-height: 400px; */
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
 }
-
 </style>

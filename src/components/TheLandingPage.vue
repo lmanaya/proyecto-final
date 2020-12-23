@@ -21,8 +21,16 @@
 
     <v-main>
       <v-container>
-        <v-card height="200" color="error"></v-card>
-        <v-row>
+        <v-carousel>
+          <v-carousel-item
+            v-for="(item, i) in items"
+            :key="i"
+            :src="item.src"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          ></v-carousel-item>
+        </v-carousel>
+        <v-row id="carrusel">
           <v-col v-for="n in 2" :key="n" cols="6">
             <v-card height="200" color="primary"></v-card>
           </v-col>
@@ -37,33 +45,27 @@
             <v-card height="200" color="error"></v-card>
           </v-col>
         </v-row>
-        <v-footer
-      color="primary lighten-1"
-      padless
-    >
-      <v-row
-        justify="center"
-        no-gutters
-      >
-        <v-btn
-          v-for="link in linksFooter"
-          :key="link"
-          color="white"
-          text
-          rounded
-          class="my-2"
-          href="https://github.com/lmanaya"
-        >
-          {{ link }}
-        </v-btn>
-        <v-col
-          class="primary lighten-2 py-4 text-center white--text"
-          cols="12"
-        >
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col>
-      </v-row>
-    </v-footer>
+        <v-footer color="primary lighten-1" padless>
+          <v-row justify="center" no-gutters>
+            <v-btn
+              v-for="link in linksFooter"
+              :key="link"
+              color="white"
+              text
+              rounded
+              class="my-2"
+              href="https://github.com/lmanaya"
+            >
+              {{ link }}
+            </v-btn>
+            <v-col
+              class="primary lighten-2 py-4 text-center white--text"
+              cols="12"
+            >
+              {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+            </v-col>
+          </v-row>
+        </v-footer>
       </v-container>
     </v-main>
   </v-app>
@@ -74,11 +76,21 @@ export default {
   data: () => ({
     links: [
       ["Inicio", "Inicio"],
+      ["¿Quienes somos?", "#carrusel"],
       ["Login", "Login"],
     ],
-    linksFooter: [
-      'Repositorio GitHub',
-    ],
+    linksFooter: ["Repositorio GitHub"],
+    items: [
+          {
+            src: require('../assets/easycargo2.png'),
+          },
+          {
+            src: require('../assets/palets2.png'),
+          },
+          {
+            src: require('../assets/noblelift3.png'),
+          },
+        ],
   }),
 };
 </script>
