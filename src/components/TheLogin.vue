@@ -19,9 +19,9 @@
       ></v-avatar>
     </v-app-bar>
 
-    <v-main>
-      <v-container d-flex justify-center>
-        <v-col cols="12" md="6">
+    <v-main class="parallax align-items-start" >
+      <v-container d-flex justify-center class="pt-15">
+        <v-col cols="12" md="6" style="background:white" class="rounded-lg">
           <v-form ref="form">
             <v-text-field
               v-model="login.email"
@@ -95,3 +95,18 @@ export default {
   },
 };
 </script>
+<style>
+
+.parallax {
+background-image: url("../assets/background.jpg");
+background-size:cover;
+/* Set a specific height */
+/* min-height: 400px; */
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+/* background-size: cover; */
+}
+
+</style>
