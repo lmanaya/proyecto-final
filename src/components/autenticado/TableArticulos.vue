@@ -194,7 +194,12 @@ export default {
   methods: {
     list() {
       axios
-        .get("http://localhost:3000/api/articulo/list")
+        .get("http://localhost:3000/api/articulo/list",{
+          
+          headers: {
+            token: this.$store.state.token
+          }
+        })
         .then((response) => {
           this.articulos = response.data;
           this.cargando = false;
@@ -327,7 +332,12 @@ export default {
             nombre: this.editedItem.nombre,
             descripcion: this.editedItem.descripcion,
             categoriaId: this.editItem.id,
-          })
+          },
+          {
+              headers: {
+                token: this.$store.state.token,
+              },
+            })
           .then((response) => {
             this.list();
           })

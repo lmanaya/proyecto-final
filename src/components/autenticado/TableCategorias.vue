@@ -95,6 +95,7 @@
       </v-data-table>
       </v-container>
     </v-app>
+    {{categorias[1]}}
   </div>
 </template>
 

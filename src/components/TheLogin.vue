@@ -12,12 +12,17 @@
         </v-tab>
       </v-tabs>
 
-      <v-avatar
-        class="hidden-sm-and-down"
-        color="grey darken-1 shrink"
-        size="32"
-      ></v-avatar>
+      <v-avatar size="32">
+        <img :src="require('../assets/background.jpg')" alt="back"
+      /></v-avatar>
+
+      <v-row cols="2" style="width: 150px; justify-content:center">
+        <v-card-title style="font-size: 0.975rem;"
+          >TEXT-TRIS</v-card-title
+        >
+      </v-row>
     </v-app-bar>
+    
     <v-main class="parallax align-items-start">
       <v-container d-flex justify-center class="pt-15">
         <v-col
