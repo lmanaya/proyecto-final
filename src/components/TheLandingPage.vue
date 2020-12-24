@@ -79,11 +79,11 @@
         >
       </v-row>
       <v-row class="mx-0" style="background: white">
-        <v-col class="pa-2">
+        <v-col class="pa-2" cols="4">
           <v-card color="#B2EBF2">
             <v-img
               height="250"
-              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              :src="require('../assets/SolucionesDeSoftware.png')"
             ></v-img>
             <v-card-title
               style="
@@ -96,23 +96,15 @@
               class="font-weight-regular pt-1 text-justify font-lead"
               style="font-size: 1rem"
             >
-              Tex-tris es una empresa de acomodacion de inventario,
-              especializada en soluciones para la industria textil en el proceso
-              de carga de vehiculos de transporte. Nuestras soluciones estan
-              pensadas de forma modular, lo que nos permite ayudar a mejorar los
-              indicadores operacionales tanto de pequeñas como de medianas y
-              grandes empresas, preocupandonos siempre por escoger materiales y
-              procedimientos que favorezcan la seguridad de las personas y la
-              integridad y calidad de sus productos.
             </v-card-text>
           </v-card>
         </v-col>
 
-        <v-col class="pa-2">
+        <v-col class="pa-2" cols="4">
           <v-card color="#FFF59D">
             <v-img
               height="250"
-              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              :src="require('../assets/EquiposParaAgruparMateriales.png')"
             ></v-img>
             <v-card-title
               style="
@@ -120,30 +112,21 @@
                 word-break: break-word;
                 line-height: 1.2;
               "
-            >
-              ¿QUIENES SOMOS Y QUE HACEMOS?</v-card-title
+            ></v-card-title
             >
             <v-card-text
               class="font-weight-regular pt-1 text-justify font-lead"
               style="font-size: 1rem"
             >
-              Tex-tris es una empresa de acomodacion de inventario,
-              especializada en soluciones para la industria textil en el proceso
-              de carga de vehiculos de transporte. Nuestras soluciones estan
-              pensadas de forma modular, lo que nos permite ayudar a mejorar los
-              indicadores operacionales tanto de pequeñas como de medianas y
-              grandes empresas, preocupandonos siempre por escoger materiales y
-              procedimientos que favorezcan la seguridad de las personas y la
-              integridad y calidad de sus productos.
             </v-card-text>
           </v-card>
         </v-col>
 
-        <v-col class="pa-2">
-          <v-card color="#B39DDB">
+        <v-col class="pa-2" cols="4">
+          <v-card color="#B39DDB" >
             <v-img
               height="250"
-              src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              :src="require('../assets/EquiposParaManipulacionDeMateriales.png')"
             ></v-img>
             <v-card-title
               style="
@@ -151,21 +134,12 @@
                 word-break: break-word;
                 line-height: 1.2;
               "
-            >
-              ¿QUIENES SOMOS Y QUE HACEMOS?</v-card-title
+            ></v-card-title
             >
             <v-card-text
               class="font-weight-regular pt-1 text-justify font-lead"
               style="font-size: 1rem"
             >
-              Tex-tris es una empresa de acomodacion de inventario,
-              especializada en soluciones para la industria textil en el proceso
-              de carga de vehiculos de transporte. Nuestras soluciones estan
-              pensadas de forma modular, lo que nos permite ayudar a mejorar los
-              indicadores operacionales tanto de pequeñas como de medianas y
-              grandes empresas, preocupandonos siempre por escoger materiales y
-              procedimientos que favorezcan la seguridad de las personas y la
-              integridad y calidad de sus productos.
             </v-card-text>
           </v-card>
         </v-col>
@@ -203,7 +177,7 @@
             text
             rounded
             class="my-2"
-            href="https://github.com/lmanaya"
+            href="https://github.com/lmanaya/proyecto-final"
           >
             <v-icon left size="24px" color="white">mdi-github</v-icon>
             {{ link }}
